@@ -165,7 +165,7 @@ const createArticle = (title, date, firstP, secondP, thirdP) => {
   paragraph1.textContent = firstP;
   paragraph2.textContent = secondP;
   paragraph3.textContent = thirdP;
-  // span.textContent = 'TESTING';
+  span.textContent = 'EXPAND';
 
   span.addEventListener('click', () => {
     console.log('span button toggle!');
