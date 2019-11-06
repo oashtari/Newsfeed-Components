@@ -93,6 +93,24 @@ const data = [{
     secondParagraph: `Article Article Article Article Article Article`,
 
     thirdParagraph: `!!!!!!!!!!!!!!!!!!!!!!!!!!`
+  },
+  {
+    title: 'ANOTHER NEW ARTICLE',
+    date: 'Nov 5th, 2019 STILL',
+    firstParagraph: `NEWer NEWer NEWer NEWer NEWer NEWer`,
+
+    secondParagraph: `Articleeeeeeeeeeeeeee`,
+
+    thirdParagraph: `??DF?DFWEF?W?EFE`
+  },
+  {
+    title: 'THAT IS IT, NO MORE ARTICLES FOR YOU',
+    date: 'Nov 5th, 2019 STILL, unless you are on the east coast, then it is Nov 6th',
+    firstParagraph: `LASTEST 1st paragraph`,
+
+    secondParagraph: `LASTESTEST 2nd paragraph`,
+
+    thirdParagraph: `CREATIVE I AM NOT`
   }
 ];
 
@@ -147,7 +165,7 @@ const createArticle = (title, date, firstP, secondP, thirdP) => {
   paragraph1.textContent = firstP;
   paragraph2.textContent = secondP;
   paragraph3.textContent = thirdP;
-  span.textContent = 'TESTING';
+  // span.textContent = 'TESTING';
 
   span.addEventListener('click', () => {
     console.log('span button toggle!');
@@ -164,61 +182,3 @@ const articles = document.querySelector('.articles');
 data.forEach(data => {
   articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
 })
-// const createPanel = (title, content) => {
-//   // create the panel component
-//   // <div class="panel">
-//   //   <div class="panel-bar">
-//   //     <h3>Title of Panel</h3>
-//   //     <div class="panel-buttons">
-//   //       <button class="panel-btn-open">&#9660</button>
-//   //       <button class="panel-btn-close hide-btn">Close</button>
-//   //     </div>
-//   //   </div>
-//   //   <div class="panel-content">
-//   //     Content of panel
-//   //   </div>
-//   // </div>
-
-//   // create elements
-//   const panel = document.createElement('div');
-//   const panelBar = document.createElement('div');
-//   const panelTitle = document.createElement('h3');
-//   const panelButtons = document.createElement('div');
-//   const btnOpen = document.createElement('button');
-//   const btnClose = document.createElement('button');
-//   const panelContent = document.createElement('div');
-
-//   // tree-like structure for elements
-//   panel.appendChild(panelBar)
-//   panel.appendChild(panelContent)
-//   panelBar.appendChild(panelTitle)
-//   panelBar.appendChild(panelButtons)
-//   panelButtons.appendChild(btnOpen)
-//   panelButtons.appendChild(btnClose)
-
-//   // set class names
-//   panel.classList.add('panel')
-//   panelBar.classList.add('panel-bar')
-//   panelButtons.classList.add('panel-buttons')
-//   btnOpen.classList.add('panel-btn-open')
-//   btnClose.classList.add('panel-btn-close', 'hide-btn')
-//   panelContent.classList.add('panel-content')
-
-//   // add content
-//   const open = '\u25bc';
-//   const close = '\u25b2';
-//   btnOpen.textContent = open;
-//   btnClose.textContent = close;
-//   panelContent.textContent = content;
-//   panelTitle.textContent = title;
-
-//   // add event handler
-//   panelButtons.addEventListener('click', () => {
-//     console.log('clicked button!');
-//     btnOpen.classList.toggle('hide-btn');
-//     btnClose.classList.toggle('hide-btn');
-//     panelContent.classList.toggle('toggle-on');
-//   });
-
-//   return panel; // return the panel;
-// }
