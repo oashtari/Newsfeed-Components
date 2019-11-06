@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -85,6 +84,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'NEW ARTICLE',
+    date: 'Nov 5th, 2019',
+    firstParagraph: `NEW NEW NEW NEW NEW NEW`,
+
+    secondParagraph: `Article Article Article Article Article Article`,
+
+    thirdParagraph: `!!!!!!!!!!!!!!!!!!!!!!!!!!`
   }
 ];
 
@@ -112,3 +120,105 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const createArticle = (title, date, firstP, secondP, thirdP) => {
+  const article = document.createElement('div');
+  const headerTitle = document.createElement('h2');
+  const dateP = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const span = document.createElement('span');
+
+
+  article.appendChild(headerTitle);
+  article.appendChild(dateP);
+  article.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(span);
+
+  article.classList.add('article');
+  dateP.classList.add('date');
+  span.classList.add('expandButton');
+
+  headerTitle.textContent = title;
+  dateP.textContent = date;
+  paragraph1.textContent = firstP;
+  paragraph2.textContent = secondP;
+  paragraph3.textContent = thirdP;
+  span.textContent = 'TESTING';
+
+  span.addEventListener('click', () => {
+    console.log('span button toggle!');
+    article.classList.toggle('article-open');
+    // btnOpen.classList.toggle('hide-btn');
+    // btnClose.classList.toggle('hide-btn');
+    // panelContent.classList.toggle('toggle-on');
+  });
+
+  return article;
+}
+const articles = document.querySelector('.articles');
+
+data.forEach(data => {
+  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+})
+// const createPanel = (title, content) => {
+//   // create the panel component
+//   // <div class="panel">
+//   //   <div class="panel-bar">
+//   //     <h3>Title of Panel</h3>
+//   //     <div class="panel-buttons">
+//   //       <button class="panel-btn-open">&#9660</button>
+//   //       <button class="panel-btn-close hide-btn">Close</button>
+//   //     </div>
+//   //   </div>
+//   //   <div class="panel-content">
+//   //     Content of panel
+//   //   </div>
+//   // </div>
+
+//   // create elements
+//   const panel = document.createElement('div');
+//   const panelBar = document.createElement('div');
+//   const panelTitle = document.createElement('h3');
+//   const panelButtons = document.createElement('div');
+//   const btnOpen = document.createElement('button');
+//   const btnClose = document.createElement('button');
+//   const panelContent = document.createElement('div');
+
+//   // tree-like structure for elements
+//   panel.appendChild(panelBar)
+//   panel.appendChild(panelContent)
+//   panelBar.appendChild(panelTitle)
+//   panelBar.appendChild(panelButtons)
+//   panelButtons.appendChild(btnOpen)
+//   panelButtons.appendChild(btnClose)
+
+//   // set class names
+//   panel.classList.add('panel')
+//   panelBar.classList.add('panel-bar')
+//   panelButtons.classList.add('panel-buttons')
+//   btnOpen.classList.add('panel-btn-open')
+//   btnClose.classList.add('panel-btn-close', 'hide-btn')
+//   panelContent.classList.add('panel-content')
+
+//   // add content
+//   const open = '\u25bc';
+//   const close = '\u25b2';
+//   btnOpen.textContent = open;
+//   btnClose.textContent = close;
+//   panelContent.textContent = content;
+//   panelTitle.textContent = title;
+
+//   // add event handler
+//   panelButtons.addEventListener('click', () => {
+//     console.log('clicked button!');
+//     btnOpen.classList.toggle('hide-btn');
+//     btnClose.classList.toggle('hide-btn');
+//     panelContent.classList.toggle('toggle-on');
+//   });
+
+//   return panel; // return the panel;
+// }
